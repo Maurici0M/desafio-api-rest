@@ -59,6 +59,81 @@
   * 👨‍💻 -> Em progresso
   * 🕒 -> Não iniciado
  </details>
+ 
+ --------------------------------------------------
+
+ <h1 align='center'>Anotações:</h1>
+
+<details>
+  <summary> <b>Informações do projeto:</b> </summary>
+  
+--------------------------------------------------
+  
+  <details> 
+    <summary> <b>Acesso as tabelas:</b> </summary>
+    
+  <br>
+  Para acessar as tabelas do projeto, após iniciá-lo, acesse o link abaixo e clique em connect:
+  
+  <br>
+    
+    http://localhost:8080/h2-console/login.jsp?jsessionid=ed19cebe9f228d63816f9185f0931375
+
+  Isso é necessário porque o projeto foi desenvolvido de forma simples, com o objetivo de ser iniciado facilmente, sem a necessidade de uma estrutura MySQL local na máquina do usuário.
+    </details>
+
+  --------------------------------------------------
+
+  <details> 
+    <summary> <b>Povoando as tabelas para realizar os testes: 📊</b> </summary>
+    <br>
+    Para testar os métodos disponíveis na aplicação, primeiro, é preciso adicionar dados a ela. Esses dados são referentes ao cadastro de clientes e criação de um pedido, e para fazermos as requisições de        criação de pedidos e cadastramento de compradores, por exemplo, aconselho que seja utilizado o Insomnia ou Postman, mas, tranquilarmente é possível utilizar outras ferramentas disponíveis! :) 
+  
+  <br>
+  <br>
+
+--------------------------------------------------
+  
+  <details> 
+    <summary> <b>Cadastrando clientes: 👥</b> </summary>
+    
+  <br>
+    
+   Para cadastramos um cliente em nossa aplicação, temos o seguinte modelo de JSON para ser lançado:
+    
+  <br>
+
+    POST -> http://localhost:8080/comprador
+
+    {
+    	"nome" : "Ada",
+    	"sobrenome" : "Wong",
+    	"idade" : "28"
+    }
+    
+  </details>
+
+--------------------------------------------------
+   
+   <details> 
+    <summary> <b>Listando TODOS os clientes cadastrados: 📋</b> </summary>
+    <br>
+    
+   Para verificarmos todos os clientes cadastrados em nossa aplicação, utilize o comando abaixo:
+    <br>
+
+    GET -> http://localhost:8080/comprador/listar/compradores
+
+  Essa listagem dos compradores adicionados, podem também ser realizadas através de consultas diretas em nossa tabela, com o seguinte comando:
+
+    SELECT * FROM comprador
+    
+  </details>
+
+  </details>
+ 
+ </details>
+
 
 
 
