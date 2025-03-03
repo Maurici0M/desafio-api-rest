@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    #database-platform: org.hibernate.dialect.MySQL5Dialect
+    #properties:
+      #hibernate:
+        #dialect: org.hibernate.dialect.MySQL5Dialect
+
+  datasource:
+    url: jdbc:h2:mem:pedidos
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    #com.mysql.jdbc.Driver
+
+  h2:
+    console:
+      enabled: true
+
+    #formatar a hora retornada em todo o projeto
+      spring:
+        jackson:
+          date-format: dd/MM/yyyy HH:mm:ss
+          time-zone: America/Sao_Paulo
+
