@@ -34,7 +34,7 @@
 --------------------------------------------------
 
 <details>
-  <summary> <b>4 - Criar um método que utilize dos verbos GET, PUT, POST e DELETE para criar e editar pedidos realizados pelos clientes; 👨‍💻</b> </summary>
+  <summary> <b>4 - Criar métodos que utilizem dos verbos GET, POST, PUT e DELETE para ler, criar, editar e excluir pedidos realizados pelos clientes; 👨‍💻</b> </summary>
   <br>
 
 Esse método precisa:
