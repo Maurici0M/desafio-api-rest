@@ -42,6 +42,11 @@ public class CompradorServiceImpl implements CompradorService {
         return c;
     }
 
+    //@Override
+    public Comprador postCriarVariosCompradores(Comprador comprador) {
+        return repository.save(comprador);
+    }
+
     @Override
     public List<Comprador> getListarCompradores() {
         return repository.findAll();

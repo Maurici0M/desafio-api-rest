@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -50,5 +51,16 @@ public class CompradorController {
     }
 
     //criar metodo para cadastrar varios clientes de uma so vez
+    @PostMapping("/teste")
+    public ResponseEntity<List<Comprador>> postCriarVariosCompradores(@RequestBody List<Comprador> listaDeCompradores){
+        List<Comprador> compradoresAdicionados = new LinkedList<>();
+
+        for(Comprador comprador : listaDeCompradores) {
+            Comprador compradorSalvo = service.postCriarComprador(comprador);
+            compradoresAdicionados.add(compradorSalvo);
+        }
+
+        return ResponseEntity.ok(compradoresAdicionados);
+    }
 
 }

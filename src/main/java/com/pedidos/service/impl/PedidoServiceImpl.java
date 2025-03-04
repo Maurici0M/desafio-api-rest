@@ -1,10 +1,12 @@
 package com.pedidos.service.impl;
 
+import com.pedidos.domain.Comprador;
 import com.pedidos.domain.Item;
 import com.pedidos.domain.Pedido;
 import com.pedidos.dto.CompradorDTO;
 import com.pedidos.dto.ItemDTO;
 import com.pedidos.dto.PedidoDTO;
+import com.pedidos.repository.CompradorRepository;
 import com.pedidos.repository.ItemRepository;
 import com.pedidos.repository.PedidoRepository;
 import com.pedidos.service.PedidoService;
@@ -21,6 +23,7 @@ public class PedidoServiceImpl implements PedidoService {
 
     private final ItemRepository itemRepository;
     private final PedidoRepository pedidoRepository;
+    private final CompradorRepository compradorRepository;
 
     //RequiredArgsConstructor do Lombok criou o construtor automaticamente!
     /*public PedidoServiceImpl(ItemRepository itemRepository, PedidoRepository pedidoRepository) {
@@ -45,7 +48,7 @@ public class PedidoServiceImpl implements PedidoService {
         return pedidoRepository.save(pedido);
     }
 
-    public PedidoDTO postPedidoFormatadoDto(Pedido pedido){
+    /*public PedidoDTO postPedidoFormatadoDto(Pedido pedido){
         //Dados do pedido
         var pedidoDto = new PedidoDTO();
         pedidoDto.setIdPedido(pedido.getId());
@@ -53,7 +56,7 @@ public class PedidoServiceImpl implements PedidoService {
 
         //Dados do comprador
         var compradorDto = new CompradorDTO();
-        compradorDto.setIdCliente(pedido.getId());
+        compradorDto.setIdCliente((long) pedido.getComprador().getId());
         compradorDto.setNomeCliente(pedido.getComprador().getNome());
         compradorDto.setSobrenomeCliente(pedido.getComprador().getSobrenome());
         pedidoDto.setCompradorDTO(compradorDto);
@@ -72,7 +75,31 @@ public class PedidoServiceImpl implements PedidoService {
         pedidoDto.setListaDeItens(itensDto);
 
         return pedidoDto;
-    }
+    }*/
 
+    public PedidoDTO postPedidoFormatadoDto(Pedido pedido){
+        //dados do pedido adicionados via construtor na classe DTO
+        var pedidoDTO = new PedidoDTO(
+                pedido.getId(),
+                pedido.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))
+        );
+
+        var compradorDTO = new CompradorDTO(
+                (long) pedido.getComprador().getId(),
+                pedido.getComprador().getNome(),
+                pedido.getComprador().getSobrenome()
+        );
+
+        //dados do pedido adicionados via construtor na classe DTO
+        List<ItemDTO> itensDTO = pedido.getListaDeItens().stream().map(item ->  new ItemDTO(
+            (long) item.getId(),
+            item.getDescricao(),
+            item.getValor()
+        )).collect(Collectors.toList());
+
+        pedidoDTO.setListaDeItens(itensDTO);
+
+        return pedidoDTO;
+    }
 
 }

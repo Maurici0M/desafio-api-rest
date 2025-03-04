@@ -9,6 +9,9 @@ public interface CompradorService {
     //POST
     Comprador postCriarComprador(Comprador comprador);
 
+    //POST
+    //Comprador postCriarVariosCompradores(Comprador comprador);
+
     //GET
     List<Comprador> getListarCompradores();
 

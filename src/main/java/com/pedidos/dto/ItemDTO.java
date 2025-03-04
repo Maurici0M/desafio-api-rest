@@ -12,6 +12,12 @@ public class ItemDTO {
     private String descricaoItem;
     private BigDecimal valorItem;
 
+    public ItemDTO(Long idItem, String descricaoItem, BigDecimal valorItem) {
+        this.idItem = idItem;
+        this.descricaoItem = descricaoItem;
+        this.valorItem = valorItem;
+    }
+
     //Lombok realiza esse trabalho!
     /*
    public Long getIdItem() {

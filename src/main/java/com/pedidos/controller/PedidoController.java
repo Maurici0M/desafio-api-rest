@@ -38,7 +38,7 @@ public class PedidoController {
         Pedido pedido = service.getBuscarPedidoById(idPedido);
 
         // Converte o pedido para o formato DTO
-        PedidoDTO pedidoDTO= service.postPedidoFormatadoDto(pedido);
+        PedidoDTO pedidoDTO = service.postPedidoFormatadoDto(pedido);
 
         return ResponseEntity.ok(pedidoDTO);
     }

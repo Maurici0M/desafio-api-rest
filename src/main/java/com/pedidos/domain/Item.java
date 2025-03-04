@@ -19,7 +19,7 @@ public class Item {
     private BigDecimal valor;
 
     //desafio
-    @ManyToOne
+    @ManyToOne //muitos ítens podem ser adicionados para um pedido
     @JoinColumn(name = "pedido_id")
     @JsonIgnore // Evita o looping de pedidos no json
     private Pedido pedido;
@@ -56,4 +56,5 @@ public class Item {
     public void setValor(BigDecimal valor) {
         this.valor = valor;
     }*/
+
 }

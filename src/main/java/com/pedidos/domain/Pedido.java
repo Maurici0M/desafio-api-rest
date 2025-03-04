@@ -19,11 +19,14 @@ public class Pedido {
     private long id;
 
     @JoinColumn(name = "comprador")
-    @ManyToOne
+    @ManyToOne //vários compradores podem ser associados a um pedido
     private Comprador comprador;
 
     //desafio
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "pedido",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER)
     private List<Item> listaDeItens = new LinkedList<>();
 
     //usando o formatador de data para voltar na formatação correta:
@@ -67,4 +70,6 @@ public class Pedido {
     public void setData(LocalDateTime data) {
         this.data = data;
     }*/
+
+
 }

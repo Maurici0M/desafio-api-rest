@@ -10,6 +10,12 @@ public class CompradorDTO {
     private String nomeCliente;
     private String sobrenomeCliente;
 
+    public CompradorDTO(Long idCliente, String nomeCliente, String sobrenomeCliente) {
+        this.idCliente = idCliente;
+        this.nomeCliente = nomeCliente;
+        this.sobrenomeCliente = sobrenomeCliente;
+    }
+
     //Lombok realiza esse trabalho!
     /*public Long getId() {
         return id;

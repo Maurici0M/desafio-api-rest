@@ -14,6 +14,11 @@ public class PedidoDTO {
     private CompradorDTO compradorDTO; // Dados do cliente
     private List<ItemDTO> listaDeItens = new LinkedList<>(); // Itens associados
 
+    public PedidoDTO(Long idPedido, String dataPedido) {
+        this.idPedido = idPedido;
+        this.dataPedido = dataPedido;
+    }
+
     //Lombok realiza esse trabalho!
     /* public Long getId() {
         return id;
