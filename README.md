@@ -37,12 +37,13 @@
 
 Esse método precisa:
 
-* Criar um método que adiciona novos pedidos (lembrando que cada pedido pode ter um ou vários ítens inclusos) <b>(POST)</b>; ✅
+* Criar um método que adiciona novos pedidos (lembrando que cada pedido pode ter um ou vários ítens inclusos) <b>(POST)</b>; ✅ 
 * Listar TODOS os pedidos realizados pelo cliente <b>(GET)</b>; ✅
-* Listar pedidos específicos através do ID da compra <b>(GET por ID)</b>; ✅
-* Permitir que os ítens dos pedidos possam ser atualizados mesmo após eles terem sido concluídos <b>(PUT)</b>; 🕒
+* Listar pedidos específicos através do ID da compra <b>(GET por ID)</b>; ✅ 
+* Permitir que os ítens dos pedidos possam ser atualizados mesmo após eles terem sido concluídos <b>(PUT)</b>; ✅ 
 * Excluir todos os pedidos realizados <b>(DELETE)</b>; 🕒
-* Excluir pedidos específicos através do ID da compra <b>(DELETE por ID)</b>; 🕒
+* Excluir pedidos específicos através do ID da compra <b>(DELETE por ID)</b>; ✅
+
  </details>
 
 --------------------------------------------------
@@ -99,7 +100,7 @@ Isso é necessário porque o projeto foi desenvolvido de forma simples, com o ob
   <details> 
     <summary> <b>Cadastrando clientes: 👥</b> </summary>
 
-Para cadastramos um cliente em nossa aplicação, temos o seguinte modelo de JSON para ser lançado:
+Para cadastramos um cliente na nossa aplicação, temos o seguinte modelo de JSON para ser lançado:
 
   <br>
 
