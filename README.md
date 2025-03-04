@@ -1,7 +1,5 @@
 <h1 align='center'>Desafio API REST:</h1>
 
---------------------------------------------------
-
 <h3>Objetivos:</h3>
 
 <details>
@@ -60,7 +58,7 @@ Esse método precisa:
  <h1 align='center'>Anotações:</h1>
 
 <details>
-  <summary> <b>Legenda dos ícones:</b> </summary>
+  <summary> <b>Legenda dos ícones: 🗺️</b> </summary>
  
 * ✅ -> Finalizado
 * 👨‍💻 -> Em progresso
@@ -70,7 +68,7 @@ Esse método precisa:
 <br>
 
 <details>
-  <summary> <b>Informações do projeto:</b> </summary>
+  <summary> <b>Informações do projeto: ℹ️</b> </summary>
 
 <br>
 
