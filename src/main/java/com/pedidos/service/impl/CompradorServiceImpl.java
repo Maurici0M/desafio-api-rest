@@ -22,14 +22,9 @@ public class CompradorServiceImpl implements CompradorService {
 
     private final CompradorRepository repository;
     private final EnderecoRepository enderecoRepository;
-
-    private Logger log = LoggerFactory.getLogger(CompradorServiceImpl.class);
+    private final Logger log = LoggerFactory.getLogger(CompradorServiceImpl.class);
 
     //RequiredArgsConstructor do Lombok criou o construtor automaticamente!
-    /* public CompradorServiceImpl(CompradorRepository repository, EnderecoRepository enderecoRepository) {
-        this.repository = repository;
-        this.enderecoRepository = enderecoRepository;
-    }*/
 
     @Override
     public Comprador postCriarComprador(Comprador comprador) {

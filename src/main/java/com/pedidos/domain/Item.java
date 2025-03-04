@@ -11,10 +11,9 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 public class Item {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    //private int idItem; //foi necessário trocar int por Integer para acessar a verificacao do metodo putAtualizarItemDoPedido
+    private Integer id;
     private String descricao;
     private BigDecimal valor;
 
@@ -24,37 +23,6 @@ public class Item {
     @JsonIgnore // Evita o looping de pedidos no json
     private Pedido pedido;
 
-    //Lombok realiza esse trabalho!
-    /* public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public BigDecimal getValor() {
-        return valor;
-    }
-
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
-    }*/
+    //Getter e Setter sendo adicionados pelo Lombok automaticamente!
 
 }

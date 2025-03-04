@@ -1,44 +1,20 @@
 package com.pedidos.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter
 @Setter
+@AllArgsConstructor
 public class CompradorDTO {
     private Long idCliente;
     private String nomeCliente;
     private String sobrenomeCliente;
 
-    public CompradorDTO(Long idCliente, String nomeCliente, String sobrenomeCliente) {
-        this.idCliente = idCliente;
-        this.nomeCliente = nomeCliente;
-        this.sobrenomeCliente = sobrenomeCliente;
-    }
+    //AllArgsConstructor do Lombok criou o construtor automaticamente e adicionou todas as variáveis nele!
 
-    //Lombok realiza esse trabalho!
-    /*public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }*/
+    //Getter e Setter sendo adicionados pelo Lombok automaticamente!
 
 }

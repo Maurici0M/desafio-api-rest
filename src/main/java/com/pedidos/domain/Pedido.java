@@ -38,38 +38,7 @@ public class Pedido {
         this.data = LocalDateTime.now();
     } //captura a data e hora atual
 
-    //Lombok realiza esse trabalho!
-    /* public void setListaDeItens(List<Item> listaDeItens) {
-        this.listaDeItens = listaDeItens;
-    }
-
-    public List<Item> getListaDeItens() {
-        return listaDeItens;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Comprador getComprador() {
-        return comprador;
-    }
-
-    public void setComprador(Comprador comprador) {
-        this.comprador = comprador;
-    }
-
-    public LocalDateTime getData() {
-        return data;
-    }
-
-    public void setData(LocalDateTime data) {
-        this.data = data;
-    }*/
-
+    //Getter e Setter sendo adicionados pelo Lombok automaticamente!
 
 }
+

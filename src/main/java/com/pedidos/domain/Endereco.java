@@ -19,37 +19,6 @@ public class Endereco {
     @ManyToOne
     private Cidade cidade;
 
-    //Lombok realiza esse trabalho!
-    /*public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
-    public Cidade getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
-    }*/
+    //Getter e Setter sendo adicionados pelo Lombok automaticamente!
 
 }

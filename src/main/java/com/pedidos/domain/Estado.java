@@ -17,20 +17,6 @@ public class Estado {
     public Estado() {
     }
 
-    /*
-    public int getId() {
-        return id;
-    }
+    //Getter e Setter sendo adicionados pelo Lombok automaticamente!
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }*/
 }

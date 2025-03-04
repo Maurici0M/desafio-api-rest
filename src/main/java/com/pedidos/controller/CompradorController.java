@@ -3,6 +3,7 @@ package com.pedidos.controller;
 import com.pedidos.domain.Comprador;
 import com.pedidos.service.CompradorService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,16 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.LinkedList;
 import java.util.List;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("comprador")
 public class CompradorController {
     private final CompradorService service;
 
     //RequiredArgsConstructor do Lombok criou o construtor automaticamente!
-    /*public CompradorController(CompradorService service) {
-        this.service = service;
-    }*/
 
     //criar comprador - Gui
     @PostMapping
@@ -50,7 +48,7 @@ public class CompradorController {
         return ResponseEntity.ok(compradorPorId);
     }
 
-    //criar metodo para cadastrar varios clientes de uma so vez
+    //criar metodo para cadastrar varios clientes de uma so vez - Desafio - TESTE
     @PostMapping("/teste")
     public ResponseEntity<List<Comprador>> postCriarVariosCompradores(@RequestBody List<Comprador> listaDeCompradores){
         List<Comprador> compradoresAdicionados = new LinkedList<>();
