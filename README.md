@@ -37,12 +37,12 @@
 
 Esse método precisa:
 
-* Criar um método que adiciona novos pedidos (lembrando que cada pedido pode ter um ou vários ítens inclusos) <b>(POST)</b>; ✅ 
-* Listar TODOS os pedidos realizados pelo cliente <b>(GET)</b>; ✅
-* Listar pedidos específicos através do ID da compra <b>(GET por ID)</b>; ✅ 
-* Permitir que os ítens dos pedidos possam ser atualizados mesmo após eles terem sido concluídos <b>(PUT)</b>; ✅ 
-* Excluir todos os pedidos realizados <b>(DELETE)</b>; 🕒
-* Excluir pedidos específicos através do ID da compra <b>(DELETE por ID)</b>; ✅
+* Criar um método que adiciona novos pedidos (lembrando que cada pedido pode ter um ou vários ítens inclusos) <b>(POST)</b>; ✅ 🤯
+* Listar TODOS os pedidos realizados pelo cliente <b>(GET)</b>; ✅ 😀
+* Listar pedidos específicos através do ID da compra <b>(GET por ID)</b>; ✅ 😀
+* Permitir que os ítens dos pedidos possam ser atualizados mesmo após eles terem sido concluídos <b>(PUT)</b>; ✅ 🙂
+* Excluir pedidos específicos através do ID da compra <b>(DELETE por ID)</b>; ✅ 😀
+<!--* Excluir todos os pedidos realizados <b>(DELETE)</b>; 🕒-->
 
  </details>
 
@@ -60,13 +60,15 @@ Esse método precisa:
 
 <details>
   <summary> <b>Legenda dos ícones: 🗺️</b> </summary>
+<br>
  
 * ✅ -> Finalizado
 * 👨‍💻 -> Em progresso
 * 🕒 -> Não iniciado
+* 😀 -> baixa dificuldade
+* 🙂 -> media dificuldade
+* 🤯 -> alta dificuldade
  </details>
-
-<br>
 
 <details>
   <summary> <b>Informações do projeto: ℹ️</b> </summary>
@@ -243,6 +245,33 @@ O corpo da requisição ficaria assim:
 
 </details>
 
+ </details>
+
+ <details>
+   <br>
+   <summary><b>Ideias futuras: 💭</b></summary>
+
+   <details>
+     <summary>Cadastro de endereço de clientes facilitado: </summary>
+     <br>
+     
+   <p>Temos a tabela de "endereço" e "cidade", que devem conter os dados de endereço dos compradores. O objetivo é, conectar a aplicação com a API do ViaCEP, de forma que baste somente adicionar o CEP,          complemento e número da casa para termos os dados de endereço dos clientes preenchidos.</p>
+   
+   <p>A utilização da API ViaCEP facilitaria o trabalho de cadastro dos endereços, visto que dados como:</p>
+  
+     * nome da rua
+     * município
+     * cidade
+     * bairro
+
+   <p>Já seriam automaticamente preenchidos, diminuindo as chances de adicionar um endereço inexistente e trazendo uma maior facilidade no cadastro.</p>
+
+   <p>Informações sobre a API ViaCEP: </p>
+
+     https://viacep.com.br/
+    
+   </details>
+   
  </details>
 
 <!-- ![Loading](https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif) -->
