@@ -150,6 +150,10 @@ Essa listagem dos compradores adicionados, pode também ser realizadas por consu
 
     SELECT * FROM comprador
 
+Mapa de verbos para as requisições de cadastrar comprador:
+
+![img.png](src/images/mapa-verbos-cadastro-comprador.png)
+
   </details>
 
   </details>
@@ -179,6 +183,47 @@ Para criar um pedido, é importante que já tenhamos no mínimo um comprador cad
         ]
     }
 
+
+</details>
+
+<details>
+<summary>Atualizando um ítem do pedido: </summary>
+
+Para atualizar um ítem do pedido, usamos o PUT, e ele editará a descrição e/ou valor de um dos nossos ítens declarados.
+
+Em exemplo, no tópico "Criando um pedido" temos um JSON com 3 ítens adquiridos pelo comprador de id 1.
+
+Vamos supor que eu queira editar o terceiro ítem que tem os seguintes dados:
+
+    {
+        "descricao": "Blu-ray Túmulo dos Vaga-lumes - Filme Ghibli 1988 em alta definição.",
+        "valor": 29.90
+    }
+
+Por este aqui:
+
+    {
+        "descricao": "DVD Blu-ray Crianças Lobo (Wolf Children) - Preço promocional!",
+        "valor": 20.90
+    }
+    
+Para isso, precisaríamos de 2 informações:
+
+* <b>'ID' do PEDIDO</b>
+* <b>'ID' do ÍTEM</b>
+
+Vamos pressupor que o 'ID' do PEDIDO seja = 1 e o 'ID' do ÍTEM que desejamos alterar, seja = 3. Nessas condições, a nossa requisição ficaria assim:
+
+    PUT -> http://localhost:8080/pedidos/1/itens/3
+
+E o nosso JSON seria o mesmo que vimos acima, contendo os novos dados:
+    
+    {
+        "descricao": "DVD Blu-ray Crianças Lobo (Wolf Children) - Preço promocional!",
+        "valor": 20.90
+    }
+
+Dessa forma, os outros ítens do nosso pedido ficariam intactos, e somente um em específico seria alterado.
 
 </details>
 

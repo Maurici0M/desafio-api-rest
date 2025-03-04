@@ -1,0 +1,10 @@
+* Não mude o nome das variáveis dos ítens dentro de "domain", caso contrário, ao fazer o GET nas requisições será retornado null!
+
+* A tabela "item" teve uma pequena alteração na variável "id", mudando:
+
+de:     - private int id;
+
+para:   - private Integer id;
+
+Isso foi necessário para que conseguissemos fazer a validação do método putAtualizarItemDoPedido do controller de pedido;
+
