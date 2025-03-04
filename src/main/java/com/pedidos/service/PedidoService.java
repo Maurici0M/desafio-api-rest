@@ -14,11 +14,16 @@ public interface PedidoService {
     //GET
     List<Item> getListarItensPedido();
 
+    //GET
     Pedido getBuscarPedidoById(Long id);
 
+    //
     Pedido salvarPedido(Pedido pedido);
 
+    //POST
     PedidoDTO postPedidoFormatadoDto(Pedido pedido);
 
+    //DELETE
+    Pedido deleteApagarPedidoById(Long id);
 
 }

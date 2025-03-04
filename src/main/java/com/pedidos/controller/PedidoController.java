@@ -93,6 +93,13 @@ public class PedidoController {
         return ResponseEntity.ok(itemExistente);
     }
 
+    @DeleteMapping("/{idPedido}")
+    public ResponseEntity<Pedido> deleteApagarPedido(@PathVariable Long idPedido){
+        Pedido pedidoParaSerExcluido = service.deleteApagarPedidoById(idPedido);
+
+        return ResponseEntity.ok(pedidoParaSerExcluido);
+    }
+
 }
 
 

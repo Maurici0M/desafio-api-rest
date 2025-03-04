@@ -227,6 +227,23 @@ Dessa forma, os outros ítens do nosso pedido ficariam intactos, e somente um em
 
 </details>
 
+<details>
+<summary><b>Excluir um pedido pelo ID:</b></summary>
+
+<p>Para excluirmos um pedido da nossa base de dados, precisamos de um dado, o 'ID' do pedido. </p>
+
+<p>Na nossa requisição, precisaremos somente passar o 'ID' do pedido que queremos excluir, e ele será totalmente apagado da nossa aplicação.</p>
+
+O corpo da requisição ficaria assim:
+
+    DELETE -> http://localhost:8080/pedidos/1
+
+<p>Nesse exemplo, estamos a abrir uma requisição para que o pedido de 'id' = 1 seja excluído.</p> 
+
+<p><b>Vale lembrar que, uma vez excluído, o pedido não poderá mais ser recuperado!</b></p>
+
+</details>
+
  </details>
 
 <!-- ![Loading](https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif) -->

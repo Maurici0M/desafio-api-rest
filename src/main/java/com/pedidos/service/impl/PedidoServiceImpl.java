@@ -57,6 +57,13 @@ public class PedidoServiceImpl implements PedidoService {
         return pedidoDTO;
     }
 
+    @Override
+    public Pedido deleteApagarPedidoById(Long id) {
+        Pedido pedidoParaSerDeletado = pedidoRepository.findById(id).orElse(null);
+        pedidoRepository.deleteById(id);
+        return pedidoParaSerDeletado;
+    }
+
     public Pedido getBuscarPedidoById(Long id){
         return pedidoRepository.findById(id).orElse(null);
     }
@@ -68,6 +75,5 @@ public class PedidoServiceImpl implements PedidoService {
     public Pedido salvarPedido(Pedido pedido){
         return pedidoRepository.save(pedido);
     }
-
 
 }
