@@ -1,0 +1,13 @@
+Nos métodos que tiverem a entrada de um 'ID' como parâmetro, não esquecer da anotação:
+
+@PathVariable
+
+Lembre-se de adicionar essa anotação antes de declarar a variável com o 'ID', e evitará erros nas requisições que fizermos com a passagem do 'ID'.
+
+Existe outra anotação muito importante, ela é o:
+
+@RequestBody
+
+Essa deve ser utilizada quando esperamos um retorno da requisição do nosso método, como um arquivo JSON, por exemplo.
+
+Caso seja um método somente de listagem ou mesmo de exxcluir algo, ela não será necessário.

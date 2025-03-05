@@ -12,6 +12,7 @@ public class CompradorDTO {
     private Long idCliente;
     private String nomeCliente;
     private String sobrenomeCliente;
+    //private EnderecoDTO enderecoDTO;
 
     //AllArgsConstructor do Lombok criou o construtor automaticamente e adicionou todas as variáveis nele!
 

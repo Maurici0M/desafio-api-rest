@@ -44,6 +44,15 @@ Esse método precisa:
 * Excluir pedidos específicos através do ID da compra <b>(DELETE por ID)</b>; ✅ 😀
 <!--* Excluir todos os pedidos realizados <b>(DELETE)</b>; 🕒-->
 
+<details>
+<summary><b>Outros métodos testados:</b> </summary>
+
+* Cadastro de vários compradores simultâneamente, para facilitar na hora de fazer os testes <b>(POST)</b>; ✅ 🙂
+* Editar o cadastro dos compradores através do ID do comprador <b>(PUT por ID)</b>; ✅ 😀
+* Excluir o cadastro dos compradores através do ID do comprador <b>(DELETE por ID)</b>; ✅ 😀
+* Listar todos os ítens que foram vendidos (nesse caso, somente os dados dos ítens são listados, sem relação com um número de pedido ou cliente) <b>(GET)</b>; ✅ 😀
+
+</details>
  </details>
 
 --------------------------------------------------
@@ -69,13 +78,13 @@ Esse método precisa:
 * 🙂 -> media dificuldade
 * 🤯 -> alta dificuldade
  </details>
+<br>
 
 <details>
   <summary> <b>Informações do projeto: ℹ️</b> </summary>
 
 <br>
-
-  <details> 
+<details> 
     <summary> <b>Acesso as tabelas: 🛢️</b> </summary>
 
   <br>
@@ -106,7 +115,7 @@ Para cadastramos um cliente na nossa aplicação, temos o seguinte modelo de JSO
 
   <br>
 
-    POST -> http://localhost:8080/comprador
+    POST -> http://localhost:8080/comprador/cadastro
 
     {
     	"nome" : "Ada",
@@ -115,6 +124,8 @@ Para cadastramos um cliente na nossa aplicação, temos o seguinte modelo de JSO
     }
 
 Esse modelo acima, adiciona os clientes de forma unitária (um por vez), mas, caso queira cadastrar vários compradores, pode ser utilizado esse modelo de JSON:
+
+    POST -> http://localhost:8080/comprador/cadastro/massa/testes
 
     [
         {
@@ -140,7 +151,6 @@ Esse modelo acima, adiciona os clientes de forma unitária (um por vez), mas, ca
 
    <details> 
     <summary> <b>Listando TODOS os clientes cadastrados: 📋</b> </summary>
-    <br>
 
 Para verificarmos todos os clientes cadastrados na nossa aplicação, utilize o comando abaixo:
 <br>
@@ -151,14 +161,18 @@ Essa listagem dos compradores adicionados, pode também ser realizadas por consu
 
     SELECT * FROM comprador
 
-Mapa de verbos para as requisições de cadastrar comprador:
+  </details>
 
-![img.png](src/images/mapa-verbos-cadastro-comprador.png)
+<br>
+<details>
+<summary><b>Mapa de verbos para as requisições de cadastrar comprador:</b></summary>
+
+![img.png](src/images/v2-mapa-verbos-cadastro-comprador.png)
+</details>
 
   </details>
 
-  </details>
-
+<br>
 <details>
 <summary><b>Criando um pedido:</b></summary>
 
@@ -187,6 +201,7 @@ Para criar um pedido, é importante que já tenhamos no mínimo um comprador cad
 
 </details>
 
+<br>
 <details>
 <summary>Atualizando um ítem do pedido: </summary>
 
@@ -228,6 +243,7 @@ Dessa forma, os outros ítens do nosso pedido ficariam intactos, e somente um em
 
 </details>
 
+<br>
 <details>
 <summary><b>Excluir um pedido pelo ID:</b></summary>
 
@@ -245,15 +261,22 @@ O corpo da requisição ficaria assim:
 
 </details>
 
+<br>
+<details>
+<summary><b>Mapa de verbos para as requisições de PEDIDOS</b></summary>
+
+![imagem](src/images/mapa-verbos-cadastro-e-consulta-pedido-comprador.png)
+</details>
+
  </details>
 
- <details>
-   <br>
-   <summary><b>Ideias futuras: 💭</b></summary>
+<br>
 
-   <details>
+ <details>
+   <summary><b>Ideias futuras: 💭</b></summary>
+<br>   
+<details>
      <summary>Cadastro de endereço de clientes facilitado: </summary>
-     <br>
      
    <p>Temos a tabela de "endereço" e "cidade", que devem conter os dados de endereço dos compradores. O objetivo é, conectar a aplicação com a API do ViaCEP, de forma que baste somente adicionar o CEP,          complemento e número da casa para termos os dados de endereço dos clientes preenchidos.</p>
    

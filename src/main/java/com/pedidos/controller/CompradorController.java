@@ -19,15 +19,13 @@ public class CompradorController {
 
     //RequiredArgsConstructor do Lombok criou o construtor automaticamente!
 
-    //criar comprador - Gui
-    @PostMapping
+    @PostMapping("/cadastro")
     private ResponseEntity<Comprador> postCriarComprador(@RequestBody Comprador comprador) {
         Comprador c = service.postCriarComprador(comprador);
 
         return ResponseEntity.ok(c);
     }
 
-    //listar todos os compradores - Gui
     @GetMapping("/listar/compradores")
     private ResponseEntity<List<Comprador>> getCompradores() {
         List<Comprador> compradores = service.getListarCompradores();
@@ -35,8 +33,7 @@ public class CompradorController {
         return ResponseEntity.ok(compradores);
     }
 
-    //listar comprador único por id - Desafio
-    @GetMapping("/{idComprador}")
+    @GetMapping("/buscar/cadastro/{idComprador}")
     public ResponseEntity<Comprador> getCompradorById(@PathVariable int idComprador){
         Comprador compradorPorId = service.getListaCompradorById(idComprador);
 
@@ -48,8 +45,7 @@ public class CompradorController {
         return ResponseEntity.ok(compradorPorId);
     }
 
-    //criar metodo para cadastrar varios clientes de uma so vez - Desafio - TESTE
-    @PostMapping("/teste")
+    @PostMapping("/cadastro/massa/testes")
     public ResponseEntity<List<Comprador>> postCriarVariosCompradores(@RequestBody List<Comprador> listaDeCompradores){
         List<Comprador> compradoresAdicionados = new LinkedList<>();
 
@@ -59,6 +55,35 @@ public class CompradorController {
         }
 
         return ResponseEntity.ok(compradoresAdicionados);
+    }
+
+    @DeleteMapping("/excluir/cadastro/{idComprador}")
+    public ResponseEntity<Comprador> deleteExcluirCadastroComprador(@PathVariable Integer idComprador){
+        Comprador comprador = service.deleteExcluirCadastroComprador(idComprador);
+
+        return ResponseEntity.ok(comprador);
+    }
+
+    @PutMapping("/editar/cadastro/{idComprador}")
+    public ResponseEntity<Comprador> putEditarCadastroComprador(@PathVariable Integer idComprador, @RequestBody Comprador compradorAtualizado){
+        //captura o comprador pelo id dele:
+        Comprador compradorPesquisado = service.getListaCompradorById(idComprador);
+
+        //verificando se o id do comprador é válido:
+        if (compradorPesquisado != null) {
+               compradorPesquisado.setNome(compradorAtualizado.getNome());
+               compradorPesquisado.setSobrenome(compradorAtualizado.getSobrenome());
+
+               //a idade não está elegível para ser editada nesse exemplo
+               //compradorPesquisado.setIdade(compradorAtualizado.getIdade());
+        }
+        else {
+            ResponseEntity.notFound().build();
+        }
+
+        Comprador comprador = service.putAtualizarDadosComprador(compradorPesquisado);
+
+        return ResponseEntity.ok(compradorPesquisado);
     }
 
 }

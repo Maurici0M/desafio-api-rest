@@ -3,6 +3,7 @@ package com.pedidos.service.impl;
 import com.pedidos.domain.Item;
 import com.pedidos.domain.Pedido;
 import com.pedidos.dto.CompradorDTO;
+import com.pedidos.dto.EnderecoDTO;
 import com.pedidos.dto.ItemDTO;
 import com.pedidos.dto.PedidoDTO;
 import com.pedidos.repository.CompradorRepository;
@@ -43,6 +44,7 @@ public class PedidoServiceImpl implements PedidoService {
                 (long) pedido.getComprador().getId(),
                 pedido.getComprador().getNome(),
                 pedido.getComprador().getSobrenome()
+
         ));
 
         //dados da lista de ítens adicionados via construtor na classe DTO

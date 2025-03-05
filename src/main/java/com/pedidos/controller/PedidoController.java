@@ -18,7 +18,7 @@ public class PedidoController {
 
     //RequiredArgsConstructor do Lombok criou o construtor automaticamente!
 
-    @PostMapping
+    @PostMapping("/criar")
     public ResponseEntity<Pedido> postCriarPedidoComItens(@RequestBody Pedido pedido) {
         // Associa os itens ao pedido antes de salvar (corrigindo erro de null no envio)
         pedido.getListaDeItens().forEach(
@@ -30,7 +30,7 @@ public class PedidoController {
         return ResponseEntity.ok(pedidoSalvo);
     }
 
-    @GetMapping("/{idPedido}")
+    @GetMapping("/listar/{idPedido}")
     public ResponseEntity<PedidoDTO> getListarPedidoById(@PathVariable Long idPedido) {
         Pedido pedido = service.getBuscarPedidoById(idPedido);
 
@@ -46,7 +46,7 @@ public class PedidoController {
         return ResponseEntity.ok(listaDeItens);
     }
 
-    @PutMapping("/{idPedido}")
+   /* @PutMapping("/{idPedido}")
     public ResponseEntity<Pedido> putAtualizarPedido(@PathVariable Long idPedido, @RequestBody Pedido pedidoAtualizado) {
         // Busca o pedido existente pelo ID
         Pedido pedidoExistente = service.getBuscarPedidoById(idPedido);
@@ -62,12 +62,10 @@ public class PedidoController {
 
         return ResponseEntity.ok(pedidoSalvo);
     }
+    */
 
-    @PutMapping("/{idPedido}/itens/{idItem}")
-    public ResponseEntity<Item> putAtualizarItemDoPedido (@PathVariable Long idPedido,
-                                                          @PathVariable Integer idItem,
-                                                          @RequestBody Item itemAtualizado ){
-
+    @PutMapping("/editar/pedido/{idPedido}/item/{idItem}")
+    public ResponseEntity<Item> putAtualizarItemDoPedido (@PathVariable Long idPedido, @PathVariable Integer idItem, @RequestBody Item itemAtualizado ){
         //capturando o id do pedido
         Pedido pedido = service.getBuscarPedidoById(idPedido);
 
@@ -93,7 +91,7 @@ public class PedidoController {
         return ResponseEntity.ok(itemExistente);
     }
 
-    @DeleteMapping("/{idPedido}")
+    @DeleteMapping("/excluir/pedido/{idPedido}")
     public ResponseEntity<Pedido> deleteApagarPedido(@PathVariable Long idPedido){
         Pedido pedidoParaSerExcluido = service.deleteApagarPedidoById(idPedido);
 

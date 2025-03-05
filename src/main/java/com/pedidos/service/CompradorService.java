@@ -17,4 +17,10 @@ public interface CompradorService {
 
     //GET
     Comprador getListaCompradorById(int id);
+
+    //DELETE
+    Comprador deleteExcluirCadastroComprador(Integer id);
+
+    //PUT
+    Comprador putAtualizarDadosComprador(Comprador comprador);
 }

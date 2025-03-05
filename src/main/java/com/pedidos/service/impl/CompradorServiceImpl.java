@@ -5,22 +5,19 @@ import com.pedidos.domain.Endereco;
 import com.pedidos.repository.CompradorRepository;
 import com.pedidos.repository.EnderecoRepository;
 import com.pedidos.service.CompradorService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
 public class CompradorServiceImpl implements CompradorService {
 
-    private final CompradorRepository repository;
+    private final CompradorRepository compradorRepository;
     private final EnderecoRepository enderecoRepository;
     private final Logger log = LoggerFactory.getLogger(CompradorServiceImpl.class);
 
@@ -32,26 +29,36 @@ public class CompradorServiceImpl implements CompradorService {
             List<Endereco> enderecos = enderecoRepository.saveAll(comprador.getEnderecos());
             log.info("");
         }
-        Comprador c = repository.save(comprador);
+        Comprador c = compradorRepository.save(comprador);
         log.info("");
         return c;
     }
 
-    //@Override
+    @Deprecated
     public Comprador postCriarVariosCompradores(Comprador comprador) {
-        return repository.save(comprador);
+        return compradorRepository.save(comprador);
     }
 
     @Override
     public List<Comprador> getListarCompradores() {
-        return repository.findAll();
+        return compradorRepository.findAll();
     }
 
-    //listar comprador único por id - Desafio
     @Override
     public Comprador getListaCompradorById(int id) {
-        return repository.findById(id).orElse(null);
+        return compradorRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public Comprador deleteExcluirCadastroComprador(Integer id) {
+        Comprador compradorQueSeraExcluido = compradorRepository.findById(id).orElse(null);
+        compradorRepository.deleteById(id);
+
+        return compradorQueSeraExcluido;
+    }
+
+    public Comprador putAtualizarDadosComprador(Comprador comprador){
+        return compradorRepository.save(comprador);
+    }
 
 }

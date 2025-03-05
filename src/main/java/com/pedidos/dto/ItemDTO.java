@@ -6,9 +6,9 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
 public class ItemDTO {
     private Integer idItem;
     private String descricaoItem;
